@@ -4,7 +4,7 @@ const createUserInfo = require('../../utils/userInfo');
 
 module.exports = {
     data : new ContextMenuCommandBuilder()
-    .setName("유저정보")
+    .setName("유지정보")
     .setType(ApplicationCommandType.User),
     /**
      * 
