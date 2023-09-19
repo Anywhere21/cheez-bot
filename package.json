@@ -1,0 +1,22 @@
+{
+  "name": "cheez-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "canvacord": "^5.4.8",
+    "discord-api-types": "^0.37.42",
+    "discord-command-builder": "^1.0.4",
+    "discord-economy-super": "^1.7.4",
+    "discord.js": "^14.13.0",
+    "dotenv": "^16.0.3",
+    "mongoose": "^6.9.1",
+    "os": "^0.1.2"
+  }
+}
