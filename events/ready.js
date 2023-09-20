@@ -13,7 +13,7 @@ module.exports = {
             state: `${client.users.cache.size}명의 유저 시청하는 중`
           }]
         }) 
-        /*const embed = new EmbedBuilder()
+        const embed = new EmbedBuilder()
         .setTitle(`치즈봇 <t:${Math.floor(Date.now() / 1000 )}:R> 재시작함`)
         .setDescription(`<t:${Math.floor(Date.now() / 1000 )}:f>`)
         .setColor("Yellow")
@@ -21,7 +21,7 @@ module.exports = {
           "1117817234077786153"
           );
   
-      start_channel.send({embeds: [embed]});*/
+      start_channel.send({embeds: [embed]});
         
         }
 }
