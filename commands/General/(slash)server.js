@@ -35,11 +35,11 @@ module.exports = {
             { name: "서버 아이디", value: `**${id}**`, inline: true },
             { name: "서버 생성일", value: `**<t:${parseInt(createdTimestamp / 1000)}:D>**` , inline: true},
             { name: "멤버 수", value: `**${memberCount}명**`,inline: true},
-            /*{ name: "역할 수", value: `**${guild.roles.cache.size}개**`, inline: true },
+            { name: "역할 수", value: `**${guild.roles.cache.size}개**`, inline: true },
             { name: "채널 수", value: `**${guild.channels.cache.size}개**`, inline: true },
             { name: "기본 알림 설정", value: `**${msgNotification}**`, inline: true },
             { name: "서버 보안 수준", value: `**${baseVerification}**`, inline: true },
-            { name: "서버 부스트 레벨", value: `**${premiumSubscriptionCount} 레벨**`, inline: true },*/
+            { name: "서버 부스트 레벨", value: `**${premiumSubscriptionCount} 레벨**`, inline: true },
         );
         interaction.editReply({embeds: [embed] });
     },

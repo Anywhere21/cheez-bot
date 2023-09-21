@@ -1,4 +1,5 @@
 const { SlashCommandBuilder, EmbedBuilder } = require("discord.js")
+var Josa = require('josa-js');
 const { } = require("../..")
 
 module.exports = {
@@ -38,7 +39,7 @@ module.exports = {
         const selected = array[Math.floor(Math.random() * array.length)];
         const embed = new EmbedBuilder()
             .setTitle(`골라`)
-            .setDescription(`선택지 ${array.join(", ")} 중에서\n치즈봇은 **${selected}**을/를 골랐어요!`)
+            .setDescription(`선택지 ${array.join(", ")} 중에서\n치즈봇은 ${Josa.r(selected,'을/를')} 골랐어요!`)
             .setTimestamp()
             .setColor("Yellow")
             interaction.editReply({embeds: [embed] })
