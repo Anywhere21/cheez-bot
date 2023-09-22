@@ -9,7 +9,7 @@ module.exports = {
         await interaction.deferReply();
         const guild = interaction.guild;
         console.log(guild);
-        const { name, ownerId, createdTimestamp, memberCount } = guild;
+        const { name, ownerId, createdTimestamp, memberCount, premiumSubscriptionCount } = guild;
         const id = guild.id
 
         let baseVerification = guild.verificationLevel;
