@@ -14,6 +14,16 @@ module.exports = {
 
         const { options } = interaction;
         const targetUser = options.getUser("유저");
+
+        const embed = new EmbedBuilder()
+        .setTitle('오류 발생 <:warning:1088949545880277042>')
+        .setDescription('봇을 상댈 가위바위보를 진랭할 수 없습니다.')
+        .setColor('Yellow')
+        .setTimestamp()
+
+        if (targetUser == interaction.user.bot ) {
+            return interaction.deferReply({embeds: [embed]});
+        }
  
         const Game = new RockPaperScissors({
             message: interaction,
