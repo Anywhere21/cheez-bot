@@ -17,11 +17,11 @@ module.exports = {
         .setTitle(`치즈봇 <t:${Math.floor(Date.now() / 1000 )}:R> 재시작함`)
         .setDescription(`<t:${Math.floor(Date.now() / 1000 )}:f>`)
         .setColor("Yellow")
-        const start_channel = client.channels.cache.get(
+        /*const start_channel = client.channels.cache.get(
           "1117817234077786153"
           );
   
-      start_channel.send({embeds: [embed]});
+      start_channel.send({embeds: [embed]});*/
         
         }
 }

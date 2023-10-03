@@ -1,9 +1,8 @@
-const { SlashCommandBuilder, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle, ComponentType  } = require("discord.js")
-const {RockPaperScissors } = require("discord-gamecord");
-var Josa = require('josa-js');
+const { SlashCommandBuilder, EmbedBuilder } = require("discord.js")
+const { RockPaperScissors } = require("discord-gamecord");
 
 module.exports = {
-    data :new SlashCommandBuilder()
+    data: new SlashCommandBuilder()
     .setName("가위바위보")
     .setDescription("다른 유저와 가위바위보를 진행합니다.")
     .addUserOption(option =>
@@ -13,17 +12,14 @@ module.exports = {
     async execute (interaction) {
 
         const { options } = interaction;
+        const player = interaction.user;
         const targetUser = options.getUser("유저");
 
         const embed = new EmbedBuilder()
         .setTitle('오류 발생 <:warning:1088949545880277042>')
-        .setDescription('봇을 상댈 가위바위보를 진랭할 수 없습니다.')
+        .setDescription('봇을 상대로 가위바위보를 진행할 수 없습니다.')
         .setColor('Yellow')
         .setTimestamp()
-
-        if (targetUser == interaction.user.bot ) {
-            return interaction.deferReply({embeds: [embed]});
-        }
  
         const Game = new RockPaperScissors({
             message: interaction,
@@ -53,9 +49,9 @@ module.exports = {
             rejectMessage: '{opponent}님이 **가위바위보** 대결 신청을 거절했어요.',
             pickMessage: '{emoji}를 선택했어요.',
             winMessage: '{player}님이 이겼습니다!',
-            tieMessage: '무승부! {player}과 {opponent} 둘다 같은걸 선택하셨네요.',
+            tieMessage: `무승부! ${player}과 {opponent} 둘다 같은걸 선택하셨네요.`,
             timeoutMessage: '시간 내에 응하지 않아 게임이 종료되었습니다.',
-            playerOnlyMessage: '{player}과 {opponent} 만 버튼을 누를 수 있습니다.',
+            playerOnlyMessage: '{player}과 {opponent}만 버튼을 누를 수 있습니다.',
             reqTimeoutMessage: '시간 내에 응답하지 않아 게임이 취소되었습니다,'
     
         });

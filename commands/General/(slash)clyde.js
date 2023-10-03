@@ -27,6 +27,7 @@ module.exports = {
       { name: "이름", value: `**<@${id}>**` },
       { name: "별명", value: `**${username}**` },
       { name: "아이디", value: `**${id}**` },
+      { name: "사용 방법", value: `**<@${id}>로 DM, 커뮤니티 기능이 비활성화 된 서버와 사용 가능**` },
     );
         interaction.editReply({embeds: [embed]});
     }
