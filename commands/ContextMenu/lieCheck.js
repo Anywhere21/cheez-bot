@@ -47,12 +47,20 @@ module.exports = {
             }
             else (joosa = '로')
 
+
             const finalembed = new EmbedBuilder()
             .setTitle(`${result}${joosa} 탐지됨`)
             .setDescription(`[메시지](https://discord.com/channels/${interaction.guild.id}/${interaction.channel.id}/${Message.id})가 ${result}${joosa} 판별되었습니다.`)
             .setTimestamp()
             .setColor("Yellow")
             .setThumbnail(`${user.displayAvatarURL({ dynamic: true })}?size=4096`);
+
+            if (result == '진실') {
+                finalembed.setThumbnail(`https://cdn.discordapp.com/emojis/1086454663429247056.png`)
+            }
+            else {
+                finalembed.setThumbnail(`https://cdn.discordapp.com/emojis/1086454712066392105.png`)
+            }
             
             setTimeout(() => {
                 interaction.editReply({embeds: [embed1]});

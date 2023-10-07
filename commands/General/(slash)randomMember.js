@@ -35,7 +35,7 @@ module.exports = {
         const embed4 = new EmbedBuilder()
         .setTitle('추첨 결과')
         .addFields(
-            { name: '당첨자', value: `${random_member}` }
+            { name: '당첨자', value: `${random_member} (${random_member.user.username})` }
             )
         .setColor('Yellow')
         .setThumbnail(`${random_member.displayAvatarURL({ dynamic: true })}?size=4096`)

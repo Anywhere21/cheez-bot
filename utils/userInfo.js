@@ -15,18 +15,17 @@ const badges = {
   VerifiedDeveloper: "<:Verified_Developer:1096705237986856981> ",
   ActiveDeveloper: "<:Active_Developer:1096704682329645076> ",
   ApplicationCommands: "명령어 지원 ",
-  Nitro: "니트로",
+  NITRO: "니트로",
   NitroClassic: "니트로 클래식",
   NitroBasic: "니트로 베이직",
 };
-
 
 function createUserInfo(user,guild) {
 
   //presence.activities // 활동들
   //presence.clientStatus // 폰, 컴, 웹 에서의 온라인 여부
 
-  let bot = user.bot ? "봇입니다." : " ";
+  let bot = user.bot ? "봇입니다." : "봇이 아닙니다.";
 
   const userFlags = user.flags.toArray();
   const timestamp = Math.floor(user.createdTimestamp / 1000);
@@ -41,7 +40,7 @@ function createUserInfo(user,guild) {
       { name: "별명", value: `**${user.globalName || user.username}**` },
       { name: "아이디", value: `**${user.id}**` },
       { name: "봇 여부", value: `**${bot}**` },
-      { name: "배지", value: userFlags.length ? userFlags.map(flag => `**${badges[flag]}**`).join(' ') : ' ' },
+      { name: "배지", value: userFlags.length ? userFlags.map(flag => `**${badges[flag]}**`).join(' ') : '배지가 없습니다.' },
       { name: "계정 생성일", value: `<t:${timestamp}:R> (<t:${timestamp}:D>)` },
     );
 }
