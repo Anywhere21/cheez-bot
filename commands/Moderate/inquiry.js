@@ -56,7 +56,7 @@ module.exports = {
 
             collector.reply({
                 ephemeral: true,
-                content: `**문의가 전송되었습니다!**`
+                content: `**문의가 개발자에게 전송되었습니다!**`
             })
             
         }

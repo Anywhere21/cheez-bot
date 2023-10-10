@@ -52,7 +52,7 @@ module.exports = {
 
             collector.reply({
                 ephemeral: true,
-                content: `**신고가 접수되었습니다!**`
+                content: `**신고가 접수되었습니다!\n\n(현재 신고 기능으로 들어온 신고들은\n서포트 서버로 접수되고 있습니다.\n빠른 시일 내에 신고채널 지정 명령어를 마련하겠습니다.)**`
             })
         }
     },
