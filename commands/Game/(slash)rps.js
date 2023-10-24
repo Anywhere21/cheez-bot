@@ -40,7 +40,7 @@ module.exports = {
             emojis: {
                 rock: '✊',
                 paper: '✋',
-                scissors: '✌'
+                scissors: '✌️',
             },
             mentionUser: true,
             timeoutTime: 60000,
