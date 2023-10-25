@@ -1,5 +1,6 @@
-const { SlashCommandBuilder, EmbedBuilder } = require("discord.js")
+const { SlashCommandBuilder, EmbedBuilder, User } = require("discord.js")
 const { RockPaperScissors } = require("discord-gamecord");
+const createUserInfo = require("../../utils/userInfo");
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -20,6 +21,10 @@ module.exports = {
         .setDescription('봇을 상대로 가위바위보를 진행할 수 없습니다.')
         .setColor('Yellow')
         .setTimestamp()
+
+        if (targetUser == player) {
+            return;
+        }
  
         const Game = new RockPaperScissors({
             message: interaction,
