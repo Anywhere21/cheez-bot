@@ -2,7 +2,7 @@ const { SlashCommandBuilder,  } = require("discord.js")
 const { } = require("../..")
 
 module.exports = {
-    data :new SlashCommandBuilder().setName("서포트-서버").setDescription("서포트 서버 링크를 불러옵니다"),
+    data :new SlashCommandBuilder().setName("서포트-서버").setDescription("서포트 `1qa-- 서버 링크를 불러옵니다"),
     /**
      * 
      * @param {import("discord.js").CommandInteraction} interaction 
