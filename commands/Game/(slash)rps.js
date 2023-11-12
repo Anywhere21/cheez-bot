@@ -22,8 +22,17 @@ module.exports = {
         .setColor('Yellow')
         .setTimestamp()
 
-        if (targetUser == player) {
-            return;
+        const embedd = new EmbedBuilder()
+        .setTitle('<:warning:1088949545880277042> **오류 발생**')
+        .setDescription('자기 자신을 상대로 가위바위보를 진행할 수 없습니다.')
+        .setColor('Yellow')
+        .setTimestamp()
+
+        let bot = User.bot
+
+        if (targetUser ==  bot) {
+            Game.gameOver();
+            interaction.reply({embeds: [embed] });
         }
  
         const Game = new RockPaperScissors({
@@ -39,8 +48,6 @@ module.exports = {
                 rock: '바위',
                 paper: '보자기',
                 scissors: '가위',
-                accept: '수락',
-                reject: '거절'
             },
             emojis: {
                 rock: '✊',
@@ -54,7 +61,7 @@ module.exports = {
             rejectMessage: '{opponent}님이 **가위바위보** 대결 신청을 거절했어요.',
             pickMessage: '{emoji}를 선택했어요.',
             winMessage: '{player}님이 이겼습니다!',
-            tieMessage: `무승부! ${player}과 {opponent} 둘다 같은걸 선택하셨네요.`,
+            tieMessage: `무승부! ${player}님과 {opponent}, 둘다 같은걸 선택하셨네요.`,
             timeoutMessage: '시간 내에 응하지 않아 게임이 종료되었습니다.',
             playerOnlyMessage: '{player}과 {opponent}만 버튼을 누를 수 있습니다.',
             reqTimeoutMessage: '시간 내에 응답하지 않아 게임이 취소되었습니다.'

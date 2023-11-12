@@ -22,33 +22,6 @@ module.exports = {
         let topiic = channel.topic;
         if (topiic == null) topiic = " "
 
-        let slow = rateLimitPerUser;
-        if (slow == 0) slow = "슬로우 모드가 비활성화 돼있습니다."
-        if (slow == 1) slow = "1초"
-        if (slow == 2) slow = "2초"
-        if (slow == 3) slow = "3초"
-        if (slow == 5) slow = "5초"
-        if (slow == 10) slow = "10초"
-        if (slow == 15) slow = "15초"
-        if (slow == 20) slow = "20초"
-        if (slow == 25) slow = "25초"
-        if (slow == 30) slow = "30초"
-        if (slow == 45) slow = "45초"
-        if (slow == 60) slow = "1분"
-        if (slow == 120) slow = "2분"
-        if (slow == 180) slow = "3분"
-        if (slow == 300) slow = "5분"
-        if (slow == 600) slow = "10분"
-        if (slow == 900) slow = "15분"
-        if (slow == 1200) slow = "20분"
-        if (slow == 1800) slow = "30분"
-        if (slow == 3600) slow = "1시간"
-        if (slow == 7200) slow = "2시간"
-        if (slow == 10800) slow = "3시간"
-        if (slow == 14400) slow = "4시간"
-        if (slow == 18000) slow = "5시간"
-        if (slow == 21600) slow = "6시간"
-
         let chtype = channel.type;
         if (chtype == 0) chtype = "<:Text_Channel:1112734068304527450> (텍스트)"
         if (chtype == 1) chtype = "DM (다이렉트 메시지)"
@@ -76,7 +49,6 @@ module.exports = {
             { name: "채널 주제", value: `${topiic}` },
             { name: "채널 분류", value: `**${chtype}**` },
             { name: "채널 생성일", value: `**<t:${parseInt(createdTimestamp / 1000)}:R> (<t:${parseInt(createdTimestamp / 1000)}:D>)**` , inline: true},
-            { name: "슬로우 모드", value: `**${slow}**` },
         );
         interaction.editReply({embeds: [embed] });
     },
